@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+#home{
+    background: url(../src/assets/abd_wallpaper1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#about{
+    background: url(../src/assets/wallpaper2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+#aboutPicture{
+    background: url('../src/assets/sawlew.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 640px) {
+    #scrollable{
+        /* border: 1px dotted white; */
+        height: calc(100vh - 150px);
+    }
+}
