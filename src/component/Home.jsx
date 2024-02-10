@@ -25,8 +25,9 @@ const Home = () => {
                 <p>A professional</p>
                 <div className='h-[1.75rem] overflow-hidden'>
                     <ul className='text-[#FF5349] animate-text-slide-2 z-0'>
-                        <li>Backend Developer</li>
-                        <li>Welder</li>
+                        <li>Back-End Developer</li>
+                        <li>Mobile Engineer</li>
+                        <li>Cyber Security Analyst</li>
                     </ul>
                 </div>
 

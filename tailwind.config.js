@@ -14,15 +14,18 @@ export default {
       },
       keyframes: {
         'text-slide-2': {
-          '0%, 40%': {
+          '0%, 26.66%': {
             transform: 'translateY(0%)',
-          },
-          '50%, 90%': {
-            transform: 'translateY(-50%)',
-          },
-          '100%': {
-            transform: 'translateY(-100%)',
-          },
+        },
+        '33.33%, 60%': {
+            transform: 'translateY(-33.33%)',
+        },
+        '66.66%, 93.33%': {
+            transform: 'translateY(-66.66%)',
+        },
+        '100%': {
+            transform: 'translateY(-99.99%)',
+        },
         },
       },
     },
