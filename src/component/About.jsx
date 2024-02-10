@@ -20,9 +20,9 @@ const About = () => {
             <Dropdown />
         </header>
 
-        <main id='scrollable' className='sm:flex sm:flex-row-reverse justify-between sm:items-start h-[600px] sm:h-auto overflow-y-scroll no-scrollbar scroll-smooth'>
+        <main>
           <h1 className='text-[#FC3F04] text-2xl'>// About me</h1>
-            <div >
+            <div id='scrollable' className='sm:flex sm:flex-row-reverse justify-between sm:items-start h-[600px] sm:h-auto overflow-y-scroll no-scrollbar scroll-smooth'>
               <div id='aboutPicture' className='w-[250px] h-[250px] mx-auto sm:w-[400px] sm:h-[400px] rounded-full'>
                 {/* <img src={sawlew} alt="" className='h-fit w-fit' /> */}
               </div>
