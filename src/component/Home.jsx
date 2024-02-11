@@ -1,10 +1,30 @@
-import React from 'react'
+import React,{ useState, useEffect } from 'react'
 import Dropdown from './Dropdown'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
+    const [homeScreenHeight, setHomeScreenHeight] = useState(window.innerHeight);
+
+    useEffect(() => {
+        // Function to update height
+        const updateHeight = () => {
+          setHomeScreenHeight(window.innerHeight);
+        };
+    
+        // Add event listener for window resize
+        window.addEventListener('resize', updateHeight);
+    
+        // Initial height setup
+        setHomeScreenHeight(window.innerHeight);
+    
+        // Remove event listener when component unmounts
+        return () => {
+          window.removeEventListener('resize', updateHeight);
+        };
+      }, []); // Empty dependency array ensures that this effect runs only once, similar to componentDidMount
+
   return (
-    <div className='flex flex-col justify-between py-5 sm:py-12 px-3 sm:px-24 h-screen relative' id='home'>
+    <div className='flex flex-col justify-between py-5 sm:py-12 px-3 sm:px-24' id='home' style={{ height: `${homeScreenHeight}px` }}>
         <header className='flex justify-between items-center'>
             <p className='font-bold text-lg select-none'>Abdullah</p>
             <nav className='hidden sm:flex  gap-40'>
