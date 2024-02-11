@@ -80,7 +80,7 @@ const Contact = () => {
                   <tbody>
                     <tr>
                       <td>
-                        <label htmlFor="name" className=''>Name</label>
+                        <label htmlFor="name" className=''>Name<span>*</span></label>
                       </td>
                     </tr>
                     <tr>
@@ -91,7 +91,7 @@ const Contact = () => {
                     
                     <tr>
                       <td className='pt-3'>
-                        <label htmlFor="email" className=''>Email</label>
+                        <label htmlFor="email" className=''>Email<span>*</span></label>
                       </td>
                     </tr>
                     <tr>
@@ -101,7 +101,7 @@ const Contact = () => {
                     </tr>
                     <tr>
                       <td className='pt-3'>
-                        <label htmlFor="message" className=''>Message</label>
+                        <label htmlFor="message" className=''>Message<span>*</span></label>
                       </td>
                     </tr>
                     <tr>
