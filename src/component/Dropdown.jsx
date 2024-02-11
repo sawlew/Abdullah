@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 
 const Dropdown = () => {
@@ -20,9 +20,25 @@ const Dropdown = () => {
         close.addEventListener('click', closeMenu);
     })
 
+    const [homeScreenHeight, setHomeScreenHeight] = useState(window.innerHeight);
+
+    useEffect(() => {
+        const updateHeight = () => {
+          setHomeScreenHeight(window.innerHeight);
+        };
+    
+        window.addEventListener('resize', updateHeight);
+    
+        setHomeScreenHeight(window.innerHeight);
+
+        return () => {
+          window.removeEventListener('resize', updateHeight);
+        };
+      }, []);
+
   return (
     <>
-            <div id='drop-down' className='z-50 absolute sm:hidden w-full h-screen top-0 left-0 p-10 bg-[#000000e0] ml-[-100%] ease-linear duration-200'>
+            <div id='drop-down' className='z-50 absolute sm:hidden w-full top-0 left-0 p-10 bg-[#000000e0] ml-[-100%] ease-linear duration-200' style={{ height: `${homeScreenHeight}px` }}>
                 <div className='flex justify-between items-center'>
                     <p className='font-bold text-lg select-none'>Abdullah</p>
                     <svg xmlns="http://www.w3.org/2000/svg" id="close" className="w-10 text-3xl cursor-pointer" viewBox="0 0 512 512">

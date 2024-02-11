@@ -1,10 +1,26 @@
-import React from 'react'
+import React,{ useState, useEffect } from 'react'
 import Dropdown from './Dropdown'
 import { Link } from 'react-router-dom'
 
 const Contact = () => {
+  const [homeScreenHeight, setHomeScreenHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+      const updateHeight = () => {
+        setHomeScreenHeight(window.innerHeight);
+      };
+  
+      window.addEventListener('resize', updateHeight);
+  
+      setHomeScreenHeight(window.innerHeight);
+
+      return () => {
+        window.removeEventListener('resize', updateHeight);
+      };
+    }, []);
+
   return (
-    <div className='flex flex-col gap-5 py-5 sm:py-12 px-3 sm:px-24 h-screen overflow-hidden' id='about'>
+    <div className='flex flex-col gap-5 py-5 sm:py-12 px-3 sm:px-24' id='about' style={{ height: `${homeScreenHeight}px` }}>
         <header className='flex justify-between items-center'>
             <p className='font-bold text-lg select-none'>Abdullah</p>
             <nav className='hidden sm:flex  gap-40'>

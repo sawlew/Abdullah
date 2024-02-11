@@ -6,22 +6,18 @@ const Home = () => {
     const [homeScreenHeight, setHomeScreenHeight] = useState(window.innerHeight);
 
     useEffect(() => {
-        // Function to update height
         const updateHeight = () => {
           setHomeScreenHeight(window.innerHeight);
         };
     
-        // Add event listener for window resize
         window.addEventListener('resize', updateHeight);
     
-        // Initial height setup
         setHomeScreenHeight(window.innerHeight);
-    
-        // Remove event listener when component unmounts
+
         return () => {
           window.removeEventListener('resize', updateHeight);
         };
-      }, []); // Empty dependency array ensures that this effect runs only once, similar to componentDidMount
+      }, []);
 
   return (
     <div className='flex flex-col justify-between py-5 sm:py-12 px-3 sm:px-24' id='home' style={{ height: `${homeScreenHeight}px` }}>
