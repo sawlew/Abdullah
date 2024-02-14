@@ -1,29 +1,15 @@
-import React,{ useState, useEffect } from 'react'
+import React from 'react'
 import Dropdown from './Dropdown'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
-    const [homeScreenHeight, setHomeScreenHeight] = useState(window.innerHeight);
 
-    useEffect(() => {
-        const updateHeight = () => {
-          setHomeScreenHeight(window.innerHeight);
-        };
-    
-        window.addEventListener('resize', updateHeight);
-    
-        setHomeScreenHeight(window.innerHeight);
-
-        return () => {
-          window.removeEventListener('resize', updateHeight);
-        };
-      }, []);
 
   return (
-    <div className='flex flex-col justify-between py-5 sm:py-12 px-3 sm:px-24' id='home' style={{ height: `${homeScreenHeight}px` }}>
+    <div className='flex flex-col justify-between py-5 sm:py-12 px-3 sm:px-24 h-full' id='home'>
         <header className='flex justify-between items-center'>
             <p className='font-bold text-lg select-none'>Abdullah</p>
-            <nav className='hidden sm:flex  gap-40'>
+            <nav className='hidden sm:flex sm:gap-20  md:gap-40'>
                 <Link to={"/about"} className='hover:text-[#FC3F04] ease-in duration-300'>About</Link>
                 <Link to={"/contact"} className='hover:text-[#FC3F04] ease-in duration-300'>Contact</Link>
             </nav>
@@ -39,8 +25,8 @@ const Home = () => {
             <p className='text-3xl sm:text-5xl'>Hi, I'm Abdullah Busari.</p>
             <div className='my-3 text-xl'>
                 <p>A professional</p>
-                <div className='h-[1.75rem] overflow-hidden'>
-                    <ul className='text-[#FF5349] animate-text-slide-2 z-0'>
+                <div className='h-[2rem] overflow-hidden'>
+                    <ul className='text-2xl text-[#FF5349] animate-text-slide-2 z-0'>
                         <li>Back-End Developer</li>
                         <li>Mobile Engineer</li>
                         <li>Cyber Security Analyst</li>

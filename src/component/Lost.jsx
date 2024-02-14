@@ -1,24 +1,9 @@
-import React,{ useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Lost = () => {
-  const [homeScreenHeight, setHomeScreenHeight] = useState(window.innerHeight);
-
-  useEffect(() => {
-      const updateHeight = () => {
-        setHomeScreenHeight(window.innerHeight);
-      };
-  
-      window.addEventListener('resize', updateHeight);
-  
-      setHomeScreenHeight(window.innerHeight);
-
-      return () => {
-        window.removeEventListener('resize', updateHeight);
-      };
-    }, []);
   return (
-    <div className='bg-[#FF5349] flex justify-center items-center' style={{ height: `${homeScreenHeight}px` }}>
+    <div className='bg-[#FF5349] flex justify-center items-center h-full'>
         <div>
             <p className='text-blue-950 text-9xl font-bold'>LOST?</p>
             <p className='text-center'>Go back

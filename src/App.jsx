@@ -39,9 +39,24 @@ const router = createBrowserRouter([
 ]);
 
 const App=() => {
+  const [homeScreenHeight, setHomeScreenHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+      const updateHeight = () => {
+        setHomeScreenHeight(window.innerHeight);
+      };
+  
+      window.addEventListener('resize', updateHeight);
+  
+      setHomeScreenHeight(window.innerHeight);
+
+      return () => {
+        window.removeEventListener('resize', updateHeight);
+      };
+    }, []);
 
   return (
-    <div>
+    <div style={{ height: `${homeScreenHeight}px` }}>
       <RouterProvider router={router} />
     </div>
   );

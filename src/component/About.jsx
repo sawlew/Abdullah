@@ -1,30 +1,16 @@
-import React,{ useState, useEffect } from 'react'
+import React from 'react'
 import Dropdown from './Dropdown'
 import { Link } from 'react-router-dom'
 import sawlew from '../assets/sawlew.jpg'
 
 const About = () => {
-  const [homeScreenHeight, setHomeScreenHeight] = useState(window.innerHeight);
 
-  useEffect(() => {
-      const updateHeight = () => {
-        setHomeScreenHeight(window.innerHeight);
-      };
-  
-      window.addEventListener('resize', updateHeight);
-  
-      setHomeScreenHeight(window.innerHeight);
-
-      return () => {
-        window.removeEventListener('resize', updateHeight);
-      };
-    }, []);
 
   return (
-    <div className='flex flex-col gap-5 py-5 sm:py-12 px-3 sm:px-24' id='about' style={{ height: `${homeScreenHeight}px` }}>
+    <div className='flex flex-col gap-5 py-5 sm:py-12 px-3 sm:px-24 h-full' id='about'>
         <header className='flex justify-between items-center'>
             <p className='font-bold text-lg select-none'>Abdullah</p>
-            <nav className='hidden sm:flex  gap-40'>
+            <nav className='hidden sm:flex sm:gap-20  md:gap-40'>
                 <Link to={"/"} className='hover:text-[#FC3F04] ease-in duration-300'>Home</Link>
                 <Link to={"/projects"} className='hover:text-[#FC3F04] ease-in duration-300'>Projects</Link>
             </nav>
@@ -37,8 +23,9 @@ const About = () => {
         </header>
 
         <main>
-          <h1 className='text-[#FC3F04] text-2xl'>// About me</h1>
+          <h1 className='text-[#FC3F04] text-2xl hidden sm:block'>// About me</h1>
             <div id='scrollable' className='sm:flex sm:flex-row-reverse justify-between sm:items-start h-[600px] sm:h-auto overflow-y-scroll no-scrollbar scroll-smooth'>
+            <h1 className='text-[#FC3F04] text-2xl sm:hidden'>// About me</h1>
               <div id='aboutPicture' className='w-[250px] h-[250px] mx-auto sm:w-[400px] sm:h-[400px] rounded-full'>
                 {/* <img src={sawlew} alt="" className='h-fit w-fit' /> */}
               </div>

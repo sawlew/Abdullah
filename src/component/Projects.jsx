@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from 'react'
+import React from 'react'
 import Dropdown from './Dropdown'
 import Adron from '../assets/Adron.png'
 import Bond from '../assets/BondMobile.png'
@@ -7,23 +7,8 @@ import CashAfrica from '../assets/CashAfrica.png'
 import { Link } from 'react-router-dom'
 
 const Projects = () => {
-  const [homeScreenHeight, setHomeScreenHeight] = useState(window.innerHeight);
-
-  useEffect(() => {
-      const updateHeight = () => {
-        setHomeScreenHeight(window.innerHeight);
-      };
-  
-      window.addEventListener('resize', updateHeight);
-  
-      setHomeScreenHeight(window.innerHeight);
-
-      return () => {
-        window.removeEventListener('resize', updateHeight);
-      };
-    }, []);
   return (
-    <div className='flex flex-col gap-5 py-5 sm:py-12 px-3 sm:px-24' id='about' style={{ height: `${homeScreenHeight}px` }}>
+    <div className='flex flex-col gap-5 py-5 sm:py-12 px-3 sm:px-24 h-full' id='about'>
         <header className='flex justify-between items-center'>
             <p className='font-bold text-lg select-none'>Abdullah</p>
             <nav className='hidden sm:flex  gap-40'>
@@ -40,8 +25,9 @@ const Projects = () => {
         </header>
 
         <main>
-        <h1 className='text-[#FC3F04] text-2xl pb-2 sm:pb-5'>// Projects</h1>
+        <h1 className='text-[#FC3F04] text-2xl pb-2 sm:pb-5 hidden sm:block'>// Projects</h1>
         <div id='scrollable' className='no-scrollbar w-[90%] mx-auto sm:flex gap-14 overflow-y-scroll sm:overflow-x-scroll scroll-smooth'>
+        <h1 className='text-[#FC3F04] text-2xl pb-2 sm:pb-5 sm:hidden'>// Projects</h1>
           <div className='sm:min-w-[500px] rounded-lg my-4 sm:my-0 flex flex-col bg-[#141414] border border-gray-800 h-auto justify-center items-center px-10 sm:px-20 py-2'>
             {/* <div className='w-full'> */}
               <p className='font-semibold'>Adron Homes</p>
